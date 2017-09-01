@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<seuic_factory_config>
+    <customer_name>BCM</customer_name>
+
+    <hidden_apps>
+      <app>
+        <packageName>com.android.settings</packageName><className>com.android.settings.Settings</className>
+      </app>
+      <app>
+        <packageName>com.cyanogenmod.filemanager</packageName><className>com.cyanogenmod.filemanager.activities.NavigationActivity</className>
+      </app>
+      <app>
+        <packageName>com.seuic.media</packageName><className>com.seuic.media.TestMedia</className>
+      </app>
+      <app>
+        <packageName>com.android.gallery3d</packageName><className>com.android.gallery3d.app.GalleryActivity</className>
+      </app>
+      <app>
+        <packageName>org.codeaurora.snapcam</packageName><className>com.android.camera.CameraLauncher</className>
+      </app>
+      <app>
+        <packageName>com.android.calculator</packageName><className>com.android.calculator.Activity</className>
+      </app>
+      <app>
+        <packageName>com.qti.factory</packageName><className>com.qti.factory.Framework.Framework</className>
+      </app>
+      <app>
+        <packageName>com.seuic.posdicon</packageName><className>com.seuic.posdicon.MainActivity</className>
+      </app>
+    </hidden_apps>
+
+</seuic_factory_config>
