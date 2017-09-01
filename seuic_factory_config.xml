@@ -2,6 +2,7 @@
 <seuic_factory_config>
     <customer_name>BCM</customer_name>
     <apk_limited>1</apk_limited>
+    <adb_connect_auth>1</adb_connect_auth>
     <hidden_apps>
       <app>
         <packageName>com.android.settings</packageName><className>com.android.settings.Settings</className>
