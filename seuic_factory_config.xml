@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <seuic_factory_config>
     <customer_name>BCM</customer_name>
-
+    <apk_limited>1</apk_limited>
     <hidden_apps>
       <app>
         <packageName>com.android.settings</packageName><className>com.android.settings.Settings</className>
