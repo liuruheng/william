@@ -23,7 +23,7 @@ class Alien(Sprite):
 
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
-        self.speed_factor = ai_settings.alien_speed_factor
+        self.speed_factor = (ai_settings.alien_speed_factor * ai_settings.game_level)
 
         # moving right -- positive or moving left -- negative
         self.direction = random.choice(range(-1,2))

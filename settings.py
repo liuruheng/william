@@ -22,6 +22,12 @@ class Settings():
         self.bullets_allowed = 3
 
         self.alien_speed_factor = 0.2
-        
         self.ship_limit = 3
 
+    def increase_level(self):
+        """increase level"""
+        self.game_level += 1
+
+    def reset_settings(self):
+        """reset settings"""
+        self.game_level = 1

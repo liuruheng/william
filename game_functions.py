@@ -6,7 +6,7 @@ from time import sleep
 
 def check_keydown_events(event, ai_settings, screen, stats, ship, aliens, bullets):
     """deal with keydown event"""
-    print(event.key)
+    #print(event.key)
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True
     elif event.key == pygame.K_LEFT:
@@ -140,8 +140,10 @@ def ship_attacked(ai_settings, stats, screen, ship, aliens, bullets):
     """ship has been attacked"""
     # statistics update
     stats.ships_left -= 1
+    # Game Over
     if stats.ships_left <= 0:
         stats.game_active = False
+        ai_settings.reset_settings()
         pygame.mouse.set_visible(True)
 
     # clean aliens and bullets
