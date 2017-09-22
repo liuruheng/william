@@ -4,6 +4,7 @@ from settings import Settings
 from ship import Ship
 from game_stats import GameStats
 from button import Button
+from scoreboard import Scoreboard
 import game_functions as gf
 from pygame.sprite import Group
 
@@ -16,6 +17,7 @@ def run_game():
     play_button = Button(ai_settings, screen, "Play")
 
     stats = GameStats(ai_settings)
+    score = Scoreboard(ai_settings, screen, stats)
     ship = Ship(ai_settings, screen)
     
     # build group for bullet
@@ -29,9 +31,9 @@ def run_game():
     while True:
         gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
         ship.update()
-        gf.update_bullets(aliens, bullets)
+        gf.update_bullets(aliens, bullets, ai_settings, stats, score)
         gf.update_aliens(ai_settings, stats, screen, aliens)
-        gf.update_screen(ai_settings, stats, screen, ship, aliens, bullets, play_button)
+        gf.update_screen(ai_settings, stats, screen, score, ship, aliens, bullets, play_button)
 
         if gf.check_ship_alien_collide(ship, aliens):
             gf.ship_attacked(ai_settings, stats, screen, ship, aliens, bullets)

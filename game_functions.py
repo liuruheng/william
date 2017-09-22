@@ -66,7 +66,7 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
     if button_clicked and not stats.game_active:
         start_game(ai_settings, screen, stats, ship, aliens, bullets)
 
-def update_screen(ai_settings, stats, screen, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, stats, screen, score, ship, aliens, bullets, play_button):
     """update image on the screen"""
     screen.fill(ai_settings.bg_color)
     # bullet group
@@ -75,11 +75,13 @@ def update_screen(ai_settings, stats, screen, ship, aliens, bullets, play_button
     # ship update
     ship.blitme()
     aliens.draw(screen)
+    score.show_score()
+
     if not stats.game_active:
         play_button.draw_button()
     pygame.display.update()
 
-def update_bullets(aliens, bullets):
+def update_bullets(aliens, bullets,ai_settings, stats, score):
     """update bullets"""
     # update locations
     bullets.update()
@@ -91,6 +93,9 @@ def update_bullets(aliens, bullets):
     #print(len(bullets))
     # bullets shot aliens
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+    if collisions:
+        stats.score += ai_settings.alien_soldier_points
+        score.prep_score()
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """fire bullet"""

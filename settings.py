@@ -14,7 +14,8 @@ class Settings():
         self.game_level = 1
         
         self.ship_speed_factor = 1.5
-        
+        self.ship_limit = 3
+
         self.bullet_speed_factor = 1
         self.bullet_width = 3
         self.bullet_height = 15
@@ -22,7 +23,9 @@ class Settings():
         self.bullets_allowed = 3
 
         self.alien_speed_factor = 0.2
-        self.ship_limit = 3
+        self.alien_soldier_points = 50
+        self.alien_general_points = 500
+        self.alien_boss_points = 5000
 
     def increase_level(self):
         """increase level"""
